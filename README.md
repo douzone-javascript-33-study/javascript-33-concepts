@@ -1,8 +1,5 @@
 # javascript-33-concepts
 
-[33-js-concepts en](https://github.com/leonardomso/33-js-concepts)
-
-
 ---
 발표자가 자료조사한거, 위키에는 안올리지만 알아두면 좋은 정보+TMI 적어놓기(대충 정리해도 됨)
 
@@ -22,3 +19,7 @@ wiki에는 정리해서 올리기
 
 공부하다가 궁금한거있으면 메모해서 스터디날 물어보고 자기도 알아와서 서로 이해한게 맞는지 비교식으로
 
+
+## 참고
+[33-js-concepts en](https://github.com/leonardomso/33-js-concepts)
+[33-js-concepts ko](https://github.com/yjs03057/33-js-concepts)
