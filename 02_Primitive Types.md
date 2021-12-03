@@ -9,8 +9,8 @@
 - boolean
 - undefined
 - null
-- symbol (ES2015)
-- bigint (ES2020)
+- symbol (+ES2015)
+- bigint (+ES2020)
 
 # 7가지 예제
 
@@ -49,13 +49,13 @@ console.log(age); // undefined
 let nothing = null;
 ```
 
-- symbol : 심볼(symbol)은 유일한 식별자(unique identifier)를 만들고 싶을 때 사용합니다. (+ES2015)
+- symbol : 심볼(symbol)은 유일한 식별자(unique identifier)를 만들고 싶을 때 사용합니다.
 
 ```jsx
 let id1 = Symbol("id"); let id2 = Symbol("id"); console.log(id1 == id2); // false
 ```
 
-- bigint : number 타입이 가지는 정수 한계보다 큰 숫자를 보관시에 사용합니다. (+ES2020)
+- bigint : number 타입이 가지는 정수 한계보다 큰 숫자를 보관시에 사용합니다.
 
 ```jsx
 console.log(2 ** 53 - 1); // 9007199254740991 ->자바스크립트에서 Number로서 연산할 수 있는 가장 큰 수
