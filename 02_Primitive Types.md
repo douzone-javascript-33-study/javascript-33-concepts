@@ -52,7 +52,9 @@ let nothing = null;
 - symbol : 심볼(symbol)은 유일한 식별자(unique identifier)를 만들고 싶을 때 사용합니다.
 
 ```jsx
-let id1 = Symbol("id"); let id2 = Symbol("id"); console.log(id1 == id2); // false
+let id1 = Symbol("id"); 
+let id2 = Symbol("id"); 
+console.log(id1 == id2); // false
 ```
 
 - bigint : number 타입이 가지는 정수 한계보다 큰 숫자를 보관시에 사용합니다.
