@@ -9,8 +9,8 @@
 - boolean
 - undefined
 - null
-- symbol
-- bigint
+- symbol (ES2015)
+- bigint (ES2020)
 
 # 7가지 예제
 
