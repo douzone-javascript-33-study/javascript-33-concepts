@@ -2,7 +2,7 @@
 
 ## 자바스크립트 엔진 구조
 
-![javascript_engine](https://media.vlpt.us/images/ru_bryunak/post/79a826fb-e84c-4e28-b049-609af759ff63/js-engine-structure.png)
+<img src="https://media.vlpt.us/images/ru_bryunak/post/79a826fb-e84c-4e28-b049-609af759ff63/js-engine-structure.png" width="500px"/>
 
 - **Memory Heap** : 메모리 할당이 일어나는 곳
 - **Call Stack** : 코드 실행에 따라 호출 스택이 쌓이는 곳
@@ -16,7 +16,7 @@
 
 ## 데이터의 저장
 
-![Untitled](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvjZsn%2Fbtq11L1D0fI%2FK2ok1IBntS8xGpEzdLx3Rk%2Fimg.png)
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvjZsn%2Fbtq11L1D0fI%2FK2ok1IBntS8xGpEzdLx3Rk%2Fimg.png" width="500px" />
 
 - 콜스택 : 원시 타입의 데이터 저장
 - 메모리 힙 : 참조 타입(객체) 데이터 저장
@@ -35,8 +35,7 @@
     	// do something
     }
     ```
-    
-    ![Untitled](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkF7gU%2Fbtq1Xlwhaaz%2FMAR4LAk3Tbj254Lp0fZK9k%2Fimg.png)
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkF7gU%2Fbtq1Xlwhaaz%2FMAR4LAk3Tbj254Lp0fZK9k%2Fimg.png" width="500px" />
     
 
 ## Value VS. Reference Types
@@ -56,7 +55,7 @@
         console.log(x,',',y) // 10,20
         ```
         
-        ![Untitled](./images/03_primitive.PNG)
+        <img src="./images/03_primitive.PNG" width="300px" />
         
 - Reference Types (Objects)
     - 저장 : 메모리 힙
@@ -74,7 +73,7 @@
         console.log(b); //{num: 2}
         ```
         
-        ![Untitled](./images/03_reference.PNG)
+        <img src="./images/03_reference.PNG" width="300px" />
         
         ```jsx
         let a = {num: 1};
