@@ -1,20 +1,24 @@
 # 3. Value Types and Reference Types
 
-## 자바스크립트 엔진 구조
+## 1. Data Types
+- 자료형 종류
+- 자료형이 어디에 저장되는지
+
+### 1-1. 자바스크립트 엔진 구조
 
 <img src="https://media.vlpt.us/images/ru_bryunak/post/79a826fb-e84c-4e28-b049-609af759ff63/js-engine-structure.png" width="500px"/>
 
 - **Memory Heap** : 메모리 할당이 일어나는 곳
 - **Call Stack** : 코드 실행에 따라 호출 스택이 쌓이는 곳
 
-## 데이터 종류
+### 1-2. 데이터 종류
 
 - Primitive types (원시 타입)
     - Number, String, Boolean, Symbol, undefined, null
 - Reference types (참조 타입)
     - Object, Function, Array
 
-## 데이터의 저장
+### 1-3. 데이터의 저장
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvjZsn%2Fbtq11L1D0fI%2FK2ok1IBntS8xGpEzdLx3Rk%2Fimg.png" width="500px" />
 
@@ -38,7 +42,7 @@
     <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkF7gU%2Fbtq1Xlwhaaz%2FMAR4LAk3Tbj254Lp0fZK9k%2Fimg.png" width="500px" />
     
 
-## Value VS. Reference Types
+### 1-4. Value VS. Reference Types
 
 - Value (Primitives)
     - 저장 : 콜 스택
@@ -86,7 +90,7 @@
         ```
         
 
-### pass by value, pass by reference
+### 1-5. pass by value, pass by reference
 
 - 함수에 값을 넘기는 것은 항상 call stack에 있는 값을 넘김
     - primitive type
@@ -132,8 +136,173 @@
         console.log(a); //{num: 2}
         ```
         
+## 2. Reference Type
 
-## 자가 테스트
+### 2-1. Object
+
+- 개념
+    
+    ```jsx
+    var zero = {
+      firstName: 'Zero',
+      lastName: 'Cho'
+    };
+    ```
+    
+    - Object : ```{ }``` 로 감싼 덩어리
+    - property : ```fistName: 'Zero'```, ```lastName : 'Cho'```
+        - key : firstName, lastName
+            - 문자열만 가능
+        - value : 'Zero', 'Cho'
+            - 어떤 값이든 상관없음
+            - 함수면 **메소드** 라고 부름
+- 접근
+    
+    ```jsx
+    zero.firstName
+    zero['firstName']
+    ```
+    
+- 특징
+    - 순서가 없음 : iterable하게 사용 불가
+        - array로 변환해서 iterable하게 사용함
+            
+            ```jsx
+            // 변환
+            Array.from(Object)
+            ```
+            
+- 자주 쓰이는 함수
+    
+    ```jsx
+    const fruit = {
+    	color: 'yellow',
+    	name: 'banana',
+    	taste: 'good',
+    	location: 3
+    }
+    
+    // values(), keys()
+    const keys = fruit.keys() // ['color','name','taste','location']
+    const values = fruit.values() // ['yellow','banana', 'good', 3]
+    ```
+    
+
+### 2-2. Array
+
+- 개념
+    
+    ```jsx
+    var array = [];
+    var array2 = [1,'hello',[1,2,3],{ hi : 1 }];
+    ```
+    
+    - Array  : ```[ ]``` 로 감싼 덩어리
+    - item : 배열안에 들어간 것들
+        - 어떠한 값도 가능
+    - Object와 다른 점
+        - array는 key가 없음
+        - array는 **순서**가 있음
+- 접근
+    
+    ```jsx
+    array2[0]
+    ```
+    
+- 생성
+    
+    ```jsx
+    var array = new Array();
+    var array2 = []; // 배열 리터럴 - 권장
+    ```
+    
+- 자주 쓰이는 함수(prototype 메서드)
+    
+    ```jsx
+    const array = [1,2,3,4];
+    const numbers = [10,20,30,40];
+    const superheros = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+    const todos = [
+      {
+        id: 1,
+        text: '자바스크립트 입문',
+        done: true
+      },
+      {
+        id: 2,
+        text: '함수 배우기',
+        done: true
+      },
+      {
+        id: 3,
+        text: '객체와 배열 배우기',
+        done: true
+      },
+      {
+        id: 4,
+        text: '배열 내장함수 배우기',
+        done: false
+      }
+    ];
+    
+    // map
+    const arrayMap = array.map(item => item ** 2); // [1,4,9,16]
+    
+    // filter
+    const arrayFilter = todos.filter(todo => !todo.done); // [{id:4, ~~}]
+    
+    // reduce
+    const sum = array.reduce((accumulator, current) => accumulator + current, 0); // 11
+    
+    // indexOf
+    const arrayIndexOf = superheros.indexOf('토르'); // 2 (찾고자 하는 아이템의 인덱스 반환)
+    
+    // find, findIndex
+    const arrayFind = todos.find(todo => todo.id === 3); // { id: 3, text: ~~, ~~ }
+    const arrayFindIndex = todos.findIndex(todo => todo.id === 3); // 2
+    
+    // splice : 기존 배열 변화 O
+    array.splice(2, 1); // array : [1,2,4] ; index 2로부터 1개 지움
+    
+    // slice : 기존 배열 변화 X
+    const arraySliced = array.slice(0,2); // [1,2] ; 인덱스 0부터 2전까지
+    
+    // shift, pop : 기존 배열 변화 O
+    const shifted = numbers.shift(); // 10 - 왼쪽꺼 뺌
+    const popped = numbers.pop(); // 40 - 오른쪽꺼 뺌
+    ///// numbers : [20,30]
+    
+    ```
+    
+
+### 2-3. Function
+
+- 개념
+    
+    ```jsx
+    // 함수 선언
+    function addOne(x) {
+    	var y = x + 1;
+    	return y;
+    }
+    
+    // 함수 표현식
+    var addOneFunc = function addOne(x) {
+    	var y = x + 1;
+    	return y;
+    };
+    
+    // 함수 실행
+    addOne(2);
+    ```
+    
+    - 함수 선언과 함수 표현식 : 호이스팅관련 차이가 존재
+    - 매개변수(parameter) : x 처럼 넘겨주는 값
+    - return
+        - 반환값
+        - 없는 경우 undefined 반환
+
+## 3. 자가 테스트
 
 - 문제 1
     - 문제
@@ -193,6 +362,12 @@
         ["1", "4", "5"] "2" "bar"
         ```
         
+## 4. 질문
+
+### Q1. 왜 reference value는 heap에 저장하나요?
+
+자료 특징상 Object들은 primitive type 에 비해서 많은 데이터를 저장해야합니다.  stack 의 경우, 빠르게 접근이 가능하지만, 저장공간이 한정적입니다. 하지만, heap memory는 접근하는데 시간이 걸리지만, 많은 데이터를 저장할 수 있습니다. 따라서 많은 데이터를 저장해야하는 referenct type value는 heap에 저장하게 됩니다.
+
 
 ## 참고
 
