@@ -362,11 +362,48 @@
         ["1", "4", "5"] "2" "bar"
         ```
         
+ - 문제 3
+    - 문제
+        
+        ```jsx
+        const origin = {
+        	a : 1,
+        	b : 2,
+        	c : 3,
+        	d : {
+        		q : 1,
+        		w : 2,
+        		e : 3
+        	},
+        }
+        
+        const changed = origin;
+        
+        changed.a = 4; 
+        
+        console.log(origin.a); 
+        console.log(changed.a) 
+        
+        changed.d.e = 50; 
+        
+        console.log(changed.d.e); 
+        console.log(origin.d.e); 
+        ```
+        
+    - 답
+        
+        ```jsx
+        4
+        4
+        50
+        50
+        ```
+        
 ## 4. 질문
 
 ### Q1. 왜 reference value는 heap에 저장하나요?
 
-자료 특징상 Object들은 primitive type 에 비해서 많은 데이터를 저장해야합니다.  stack 의 경우, 빠르게 접근이 가능하지만, 저장공간이 한정적입니다. 하지만, heap memory는 접근하는데 시간이 걸리지만, 많은 데이터를 저장할 수 있습니다. 따라서 많은 데이터를 저장해야하는 referenct type value는 heap에 저장하게 됩니다.
+자료 특징상 Object들은 primitive type 에 비해서 많은 데이터를 저장해야합니다.  stack 의 경우, 빠르게 접근이 가능하지만, 저장공간이 한정적입니다. 하지만, heap memory는 접근하는데 시간이 걸리지만, 많은 데이터를 저장할 수 있습니다. 따라서 많은 데이터를 저장해야하는 referenct type value는 heap에 저장하게 됩니다. 또한, Object는 크기가 고정되어 있는 원시 타입과는 다르게 데이터의 크기가 계속 변할 수 있습니다. 그래서 따로 별도의 heap이라는 저장공간을 만들어서 관리하게 됩니다.
 
 
 ## 참고
