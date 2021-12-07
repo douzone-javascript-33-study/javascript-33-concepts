@@ -138,6 +138,8 @@
         
 ## 2. Reference Type
 
+* reference type ? 실제 데이터가 저장된 주소를 가리킨다.
+
 ### 2-1. Object
 
 - 개념
