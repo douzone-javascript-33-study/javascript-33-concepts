@@ -288,3 +288,6 @@
 `obj.age // 27`
 
 `typeof` `obj // object`
+
+## Infinity
+
