@@ -303,8 +303,42 @@
     - return
         - 반환값
         - 없는 경우 undefined 반환
+       
+## 3. 추가 개념
 
-## 3. 자가 테스트
+- Rest parameter
+    - Spread 연산자(...)를 사용하여 함수의 파라미터를 작성한 형태
+    - 함수의 파라미터로 오는 값들을 **배열**로 전달받을 수 있다.
+    
+    ```jsx
+    function foo(...restParameter){
+    	return restParameter;
+    }
+    const rest = foo(1,2,3); // [1,2,3]
+    ```
+    
+- argument
+    - 모든 함수의 실행 시 자동으로 생성되는 객체 **유사배열객체**
+    
+    ```jsx
+    var foo = function () {
+      console.log(arguments);
+    };
+    foo(1, 2); // { '0': 1, '1': 2 }
+    ```
+    
+- 객체 구조 분해
+    
+    ```jsx
+    const hero = {
+    	name : '토니 스타크',
+    	actor : '로버트',
+    	alias : '아이언맨'
+    }
+    const {alias, name, actor} = hero;
+    ```
+
+## 4. 자가 테스트
 
 - 문제 1
     - 문제
