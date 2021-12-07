@@ -181,19 +181,21 @@
 
 - 객체의 값을 숨기기 위해서 사용
 
-`let obj = {`
+    `let obj = {`
 
-`name: "이재성",`
+    `name: "이재성",`
 
-`age: 27,`
+    `age: 27,`
 
-`[Symbol('phoneNumber')]: "01022256816"`
+    `[Symbol('phoneNumber')]: "01022256816"`
 
-`}`
+    `}`
 
-`Object.keys(obj); // ["name", "age"] 이렇게 phoneNumber 키값을 제외하고 보여준다.`
+    `Object.keys(obj); // ["name", "age"] 이렇게 phoneNumber 키값을 제외하고 보여준다.`
 
-`Object.values(obj); // ["이재성", 27]`
+    `Object.values(obj); // ["이재성", 27]`
+
+- 객체의 가장 unique한 property key에 사용
 
 ## 
 
