@@ -441,7 +441,39 @@
 
 자료 특징상 Object들은 primitive type 에 비해서 많은 데이터를 저장해야합니다.  stack 의 경우, 빠르게 접근이 가능하지만, 저장공간이 한정적입니다. 하지만, heap memory는 접근하는데 시간이 걸리지만, 많은 데이터를 저장할 수 있습니다. 따라서 많은 데이터를 저장해야하는 referenct type value는 heap에 저장하게 됩니다. 또한, Object는 크기가 고정되어 있는 원시 타입과는 다르게 데이터의 크기가 계속 변할 수 있습니다. 그래서 따로 별도의 heap이라는 저장공간을 만들어서 관리하게 됩니다.
 
+### Q2. 객체 내용이 같으면서 서로 다른 객체를 만들고 싶을때
 
+깊은 복사 사용
+
+[https://ryulog.tistory.com/140](https://ryulog.tistory.com/140)
+
+### Q3. 배열 리터럴을 사용하는 이유?
+
+1. 성능 차이 : **[https://12bme.tistory.com/134](https://12bme.tistory.com/134)**
+
+- 배열리터럴 속도 > 생성자 속도
+
+2. 더 명확하고, 짧음. 혼동 주지 않음 : **[https://stackoverflow.com/questions/1094723/what-is-array-literal-notation-in-javascript-and-when-should-you-use-it](https://stackoverflow.com/questions/1094723/what-is-array-literal-notation-in-javascript-and-when-should-you-use-it)**
+
+```jsx
+// these are different:
+e = [3],             // e.length == 1, e[0] == 3
+f = new Array(3);   // f.length == 3, f[0] == undefined
+```
+
+3. Object와 Array는 새로 쓰여질 수 있음(overridden) (나도 모르게 새로 쓸 수 있기에 항상 조심해야하는 불편함이 있음) : **[https://www.mattlunn.me.uk/2012/04/the-use-of-literals-vs-constructors/](https://www.mattlunn.me.uk/2012/04/the-use-of-literals-vs-constructors/)**
+
+```jsx
+Array = Object = function () {
+	alert('Foo');
+};
+var ar = new Array; // alerts "Foo"
+var obj = new Object; // alerts "Foo"
+```
+
+4. Object 생성시 내장 객체(Array, 등등)에게 객체 생성을 위임할 수 있음 : **[https://www.huskyhoochu.com/literal-and-constructor/](https://www.huskyhoochu.com/literal-and-constructor/)**
+
+- 예상하지 못한 결과 나올 수 있다는거 부가 설명 : **[https://frontdev.tistory.com/entry/Constructor-vs-Literal](https://frontdev.tistory.com/entry/Constructor-vs-Literal)**
 ## 참고
 
 [콜스택/메모리힙](https://curryyou.tistory.com/276)
