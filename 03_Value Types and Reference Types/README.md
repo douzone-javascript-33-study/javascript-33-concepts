@@ -59,7 +59,7 @@
         console.log(x,',',y) // 10,20
         ```
         
-        <img src="./images/03_primitive.PNG" width="300px" />
+        <img src="../images/03_primitive.PNG" width="300px" />
         
 - Reference Types (Objects)
     - 저장 : 메모리 힙
@@ -77,7 +77,7 @@
         console.log(b); //{num: 2}
         ```
         
-        <img src="./images/03_reference.PNG" width="300px" />
+        <img src="../images/03_reference.PNG" width="300px" />
         
         ```jsx
         let a = {num: 1};
