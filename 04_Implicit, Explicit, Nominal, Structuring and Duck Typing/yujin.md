@@ -22,7 +22,7 @@
 
 ### 1-2. operator에서 암시적 형변환
 
-- logical operator (&&, ||)
+- logical operator (`&&`, `||`)
     - 검사할 당시에는 boolean으로 암시적으로 형변환(implicitly convert)
     - 결과값은 형변환한 boolean이 아닌 형변환 전의 값을 return함
     - ex
@@ -35,9 +35,9 @@
         console.log(value, value2, value3); //apple apple 0
         ```
         
-- mathmatical operator( +, -, *, %)
+- mathmatical operator( `+`, `-`, `*`, `%`)
     - mathmatical  operand와 함께 쓰이는 경우 숫자로 암시적 형변환 일어남
-    - - , * , %
+    - `-` , `*` , `%`
         - 모든 타입 → 숫자로 형변환
         
         ```jsx
@@ -45,7 +45,7 @@
         console.log(value); // 6 (0 + 5 + 1)
         ```
         
-    - +
+    - `+`
         - 문자열 > 숫자
             - 문자열 + 모든 타입(숫자 포함) → 문자열 (숫자 → 문자로 형변환)
             - 숫자 + 숫자로 변환되지 않는 타입 → 문자열 (숫자를 문자로 형변환)
@@ -77,13 +77,13 @@
         console.log(null_ + undefined_) // 숫자 변환 : NaN
         ```
         
-- relational operator ( < , > , ≤ , ≥ )
+- relational operator ( `<` , `>` , `≤` , `≥` )
     - number로 암시적 형변환 ( date 까지 )
         - `null`도 0으로 형변환
     - string 끼리 : 알파벳 순서 비교
     - NaN 이 operand에 있으면 항상 false
         - `console.log(undefined < 1)` : `false`
-- equality operator ( ==, ≠ )
+- equality operator ( `==`, `!=` )
     - **비교 타입이 다른 경우** 한 쪽을 암시적 타입 변환해서 비교
         - NaN이 operand에 있으면 항상 false
         - null 은 0이 아닌 undefined로 변환됨
