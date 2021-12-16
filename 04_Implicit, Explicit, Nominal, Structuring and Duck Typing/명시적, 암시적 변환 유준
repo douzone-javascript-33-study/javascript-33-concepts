@@ -1,0 +1,23 @@
+암시적 변환이란 **자바스크립트 엔진**이 필요에 따라 자동으로 데이터타입을 변환시키는 것이다.
+
+명시적변환이란 **개발자**가 의도를 가지고 데이터타입을 변환
+
+! : 값의 자료형이 무엇이든 항상 boolean 값으로 반환
+
+
+
+
+배열 객체에서의 toString 함수는 약간 다르게 동작한다. 배열에서의 toString 메서드는 아무것도 넣지 않은 join 메서드를 실행한 것과 비슷하게 동작한다. 이제 밑에 예제를 통해 배열 객체에 toString을 적용했을 때 어떻게 돌아가는지 확인
+
+```jsx
+console.log([1, 2, 3].toString());// 1, 2, 3
+console.log([1, 2, 3].join());// 1, 2, 3
+console.log(typeof [1, 2, 3].toString());// String
+console.log(typeof [1, 2, 3].join());// String
+console.log("me"+[1,2,3]);// me1, 2, 3
+console.log(4 + [1,2,3]);//  41, 2, 3
+console.log([]*4);// 0
+console.log([].toString());// ''
+console.log(4/[2].toString());// 2
+console.log(Number([].toString()));// 0
+```
