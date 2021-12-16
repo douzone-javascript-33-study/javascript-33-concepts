@@ -9,6 +9,7 @@
 
 배열 객체에서의 toString 함수는 약간 다르게 동작한다. 배열에서의 toString 메서드는 아무것도 넣지 않은 join 메서드를 실행한 것과 비슷하게 동작한다. 이제 밑에 예제를 통해 배열 객체에 toString을 적용했을 때 어떻게 돌아가는지 확인
 
+
 ```jsx
 console.log([1, 2, 3].toString());// 1, 2, 3
 console.log([1, 2, 3].join());// 1, 2, 3
@@ -21,3 +22,4 @@ console.log([].toString());// ''
 console.log(4/[2].toString());// 2
 console.log(Number([].toString()));// 0
 ```
+
