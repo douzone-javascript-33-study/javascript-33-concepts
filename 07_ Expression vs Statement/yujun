@@ -1,0 +1,63 @@
+Expression 
+
+값을 산출해내는 코드. 값이 도출되기 때문에 함수의 인자로 들어갈 수있다.
+
+Statement
+
+특정 액션을 수행하는 코드. 값을 도출할 수 있는 Expression statement, if, for statement는 그 자체로 도출하지 않음.→ 함수의 인자로 들어갈 수 없음
+
+### 삼항연산자
+
+는 Statement이자 Expression이다. 
+
+`let x = (y > = 0 ? y : -y);` 
+
+(=부터 ;까지가 Expression)
+
+1. `if`
+2. `if-else`
+3. `while`
+4. `do-while`
+5. `for`
+6. `switch`
+7. `for-in`
+8. `debugger`
+9. `variable declaration`
+
+`function thisIsStatement(func) {
+  return func.name
+}`
+
+**익명 함수**라 불리는 **함수 표현식**은 **식** (**Expression**)이다.
+
+`thisIsStatement(function() {}) // ""`
+
+**익명 함수**와 비슷하지만 이름이 있는 **네임드 함수 표현식**은 **식** (**Expression**)이다.
+
+`thisIsStatement(function namedFunc() {}) // "namedFunc"`
+
+**값이 들어올 곳**에 **함수를 선언**하면, 자바스크립트는 **그 함수를 값으로 사용**하려 한다.값이 들어올 곳에 선언된 함수가 **값으로 사용될 수 없다면**, **에러가 발생**할 것이다.값이 들어가는 곳이 아닌 위치에 있는 곳에 함수를 선언하면 **문** (**Statement**)으로 쓰인다.
+
+### 콤마 연산자
+
+콤마 연산자는 우리가 여러 개의 표현식을 연결할 수 있도록 도와줌
+
+반환은 마지막 표현식만 반환
+
+마지막 값이 return 됨
+
+```jsx
+function foo() {
+  return true, false, 1, 'expression'
+}
+foo() // expression
+```
+
+**세미콜론**
+
+- 세미콜론(;)은 문의 종료를 나타낸다.
+- JS engine는 세미콜론으로 문이 종료한 위치를 파악하고 순차적으로 하나씩 문을 실행한다.
+- 단, 0개 이상의 문을 중괄호로 묶은 코드블록{...} 뒤에는 세미콜론을 붙이지 않는다.
+    - if문 for문 함수 등의 코드블록 뒤에는 세미콜론이 붙지 않는다.
+    - 이러한 코드 블록은 언제나 문의 종료를 의미하는 자체 종결성(self closing)을 갖는다.
+- 표현식뒤에 ;를 붙이면 표현식 문장이 됨
